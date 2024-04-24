@@ -54,6 +54,7 @@
               ],
               "outputHashing": "all"
             },
+
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -103,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

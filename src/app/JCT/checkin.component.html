@@ -1,0 +1,71 @@
+
+<div class="row">
+  <div class="mb-3">
+    <h3 class="card-header">Check IN</h3>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="mb-3">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" formControlName="customerName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.customerName.errors }" />
+        <div *ngIf="submitted && f.customerName.errors" class="invalid-feedback">
+          <div *ngIf="f.customerName.errors.required">Customer Name is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+
+
+        <label for="phone">Mobile Number:</label>
+        <input type="text" formControlName="phone" class="form-control" name="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+          <div *ngIf="f.phone.errors.required">Mobile Number is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+
+        <label for="regNo">Reg No:</label>
+        <input type="text" formControlName="regNo" class="form-control" name="regNo" [ngClass]="{ 'is-invalid': submitted && f.regNo.errors }" />
+        <div *ngIf="submitted && f.regNo.errors" class="invalid-feedback">
+          <div *ngIf="f.regNo.errors.required">Reg No is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+
+
+        <label for="serviceType">Service Type:</label>
+        <input type="text" formControlName="serviceType" class="form-control" name="serviceType" [ngClass]="{ 'is-invalid': submitted && f.serviceType.errors }" />
+        <div *ngIf="submitted && f.serviceType.errors" class="invalid-feedback">
+          <div *ngIf="f.serviceType.errors.required">Service Type is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+
+
+        <label class="form-label" for="dMSJC">DMS JC:</label>
+        <input type="text" formControlName="dMSJC" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dMSJC.errors }" />
+        <div *ngIf="submitted && f.dMSJC.errors" class="invalid-feedback">
+          <div *ngIf="f.dMSJC.errors.required">DMS JC is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+
+
+
+        <!--<input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />-->
+
+        <label for="frontOfficeRemarks">Customer Remarks:</label>
+        <input type="text" formControlName="frontOfficeRemarks" class="form-control" />
+      </div>
+
+      <div class="mb-3">
+
+        <button type="submit" [disabled]="submitting" class="btn btn-primary">
+          <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+          Save
+        </button>
+        </div>
+
+
+    </form>
+  </div>
+  </div>

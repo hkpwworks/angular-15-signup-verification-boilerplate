@@ -1,0 +1,38 @@
+<h1>VIWS</h1>
+<p>All Vehicles inside Workshop </p>
+
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Create Account</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width:25%">DMS JC</th>
+      <th style="width:10%">Reg No</th>
+      <th style="width:30%">Customer Name</th>
+      <th style="width:15%">Phone</th>
+      <th style="width:15%">Service Type</th>
+      <th style="width:5%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let viws of viwses">
+      <td class="align-middle">{{viws.dMSJC}} </td>
+      <td class="align-middle">{{viws.regNo}}</td>
+      <td class="align-middle">{{viws.customerName}}</td>
+      <td class="align-middle">{{viws.phone}}</td>
+      <td class="align-middle">{{viws.serviceType}}</td>
+      <td style="white-space: nowrap">
+        <button (click)="deleteAccount(viws.id)" class="btn btn-sm btn-danger btn-delete-account" [disabled]="viws.isDeleting">
+          <span *ngIf="viws.isDeleting" class="spinner-border spinner-border-sm"></span>
+          <span *ngIf="!viws.isDeleting">Delete</span>
+        </button>
+      </td>
+    </tr>
+
+    <tr *ngIf="!viwses">
+      <td colspan="4" class="text-center">
+        <span class="spinner-border spinner-border-lg align-center"></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
